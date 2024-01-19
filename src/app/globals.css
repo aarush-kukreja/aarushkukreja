@@ -6,7 +6,10 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --cursorX: 0;
+  --cursorY: 0;
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -14,14 +17,730 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+
+  body {
+    color: rgb(176, 217, 215) !important; /* Light gray color for text */
+  }
 }
 
 body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+/* Custom scrollbar styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+::selection {
+  background: rgb(7, 175, 175);
+  /* Teal background for selected text */
+  color: rgb(0, 0, 0);
+  /* Optional: Change the color of the text, if desired */
+}
+
+
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  /* Track background - make it transparent */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  /* Scroll handle color */
+  border-radius: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* Scroll handle color on hover */
+}
+
+.hover-effect {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: -5px;
+  /* Adjust as necessary to align with the left edge */
+}
+
+.hover-effect .line {
+  width: 0;
+  height: 2px;
+  background: teal;
+  transition: width 0.3s ease;
+  margin-right: 5px;
+}
+
+.hover-effect:hover .line {
+  width: 20px;
+  /* Adjust line length as needed */
+}
+
+.hover-effect:hover a {
+  transform: translateX(5px);
+  /* Adjust movement distance as needed */
+  transition: transform 0.3s ease;
+}
+
+/* Menu items and lines */
+.menu-item {
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px;
+  /* Space for the line */
+}
+
+.menu-link {
+  color: rgb(169, 169, 169);
+  /* Default color for the text */
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: bolder;
+  transition: color 0.3s ease, transform 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
+  /* Add box-shadow transition */
+  text-decoration: none;
+  /* Remove underline from links */
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  display: block;
+  width: 20px;
+  /* Initial width of the line */
+  height: 2px;
+  background: #555;
+  /* Initial color of the line */
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+.menu-item:hover .menu-link {
+  color: #ffffff;
+  /* Bright color on hover */
+  transform: translateX(20px);
+  /* Moves the text to the right */
+}
+
+.menu-item:hover .line {
+  width: 40px;
+  /* Increased width on hover */
+  background: teal;
+  /* Brighter color on hover */
+}
+
+.menu-item-group {
+  margin-top: 50px;
+  /* Increase space above the menu */
+  margin-bottom: 50px;
+  /* Increase space below the menu */
+}
+
+
+/* Custom scrollbar styles and other styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.cursor {
+  opacity: 1;
+}
+
+.blinking-cursor {
+  opacity: 1;
+  color: teal;
+  /* If it's a text element representing the cursor */
+
+}
+
+.blinking-cursor.fading {
+  animation: fade-cursor 1s ease-in-out infinite;
+}
+
+@keyframes fade-cursor {
+
+  0%,
+  25%,
+  75%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.project-card {
+  padding: 17px;
+  border-radius: 20px;
+  background-color: #ffffff00;
+  
+  /* White text */
+  transition: opacity 0.3s ease;
+  /* Smooth transition for the dimming effect */
+  /* Enable flexbox */
+  align-items: left !important;
+  /* Center items vertically */
+  gap: 1rem;
+  /* Optional: Adds space between image and text content */
+  /* Align children vertically in the center */
+  position: relative;
+  /* stack children vertically */
+  justify-content: space-between;
+  /* adjust this as needed */
+}
+
+.project-card-title {
+  align-items: left !important;
+  justify-content: space-between;
+  overflow-wrap: break-word;
+  /* or word-wrap: break-word; */
+}
+
+.project-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+
+}
+
+.arrow-icon {
+  flex-shrink: 0;
+  margin-bottom: 10px;
+  /* Prevents the icon from shrinking */
+  margin-left: 0.5rem;
+  /* Adjust the left margin if necessary */
+  /* Set a fixed size for the icon if needed */
+}
+
+
+/* Ensure the title does not wrap and the arrow stays on the same line */
+.project-title {
+  white-space: wrap;
+  overflow: hidden;
+}
+
+.project-image-container, .project-date {
+  min-width: 125px; /* This ensures that the width does not go below 125px */
+  min-height: 75px; /* This ensures that the height does not go below 75px */
+  /* ... other styles ... */
+}
+
+.project-image-container {
+  width: 125px !important;
+  /* Fixed width for the square */
+  height: 75 !important;
+  /* Fixed height, same as width to maintain square shape */
+  overflow: hidden;
+  /* Hide overflow to maintain the square shape */
+  margin-right: 20px;
+  border-radius: 8px;
+}
+
+.project-image {
+  width: 100%;
+  border-radius: 12px;
+  height: 100%;
+  object-fit: cover;
+  /* Cover the container area */
+  object-position: center;
+  /* Center the image */
+  transition: filter 0.3s ease;
+}
+
+.project-date {
+  width: 125px; /* Same as image container width */
+  height: 75px; /* Same as image container height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:  rgb(176, 217, 215) !important;
+  margin-right: 20px; /* Same margin as image container */
+  border-radius: 8px; /* Same border radius as image container */
+  font-size: 10px !important; /* Keeping the text size as earlier */
+  text-align: center; /* Center the text */
+  padding: 10px; /* Adjust padding to ensure the text fits well */
+  /* You can add background, border, or other styles to match the design of your card */
+}
+
+
+
+.project-card-content {
+  padding: 15px;
+  white-space: normal;
+  overflow-wrap: break-word;
+  /* or word-wrap: break-word; */
+  justify-content: flex-start; /* Align flex items to the start of the container */
+  text-align: left; /* Align text to the left */
+  flex: 1;
+  /* Allow the content to fill up the remaining space */
+  padding-left: 0.5rem;
+  /* Optional: Adds padding between image and text */
+  overflow: wrap;
+  /* Hides any content that overflows its box */
+  text-overflow: ellipsis;
+  /* Adds an ellipsis to indicate text has been cut off */
+}
+
+.project-card.dim {
+  opacity: 0.7;
+  filter: blur(1px);
+  filter: grayscale(100%);
+  /* Dimmed opacity */
+
+}
+
+.project-card.bright {
+  animation: fadeInBackground 0.3s ease forwards;
+  /* Adjust duration as needed */
+  /* Smooth transition for the background color */
+  background: rgba(255, 255, 255, 0.099);
+  filter: none;
+  color: white;
+
+}
+
+.project-card.bright .tag {
+  color: white; /* Sets the text color to white */
+}
+
+
+.tag {
+  background-color: #09c1af3c;
+  color: rgb(169, 169, 169);
+  border-radius: 20px;
+  font-size: 10px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-top: 7px;
+}
+
+
+.social-links {
+  display: flex;
+  justify-content: space-evenly;
+  /* This will space the icons evenly */
+  align-items: center;
+  /* If you have a specific width you want your icons to be within, you can set that here. Otherwise, they will space evenly across the full width of the container. */
+  width: 100%;
+  /* Adjust the width as necessary */
+  padding: 0;
+  /* Reset padding if necessary */
+  list-style: none;
+  /* If your elements are in a list */
+}
+
+.social-link-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center the icons horizontally */
+  margin: 0 5px;
+  /* Adjust as needed for equal spacing */
+}
+
+.social-icon {
+  color: gray;
+  /* Initial icon color */
+
+  font-size: 24px;
+  /* Adjust icon size as needed */
+  transition: color 0.3s ease, transform 0.3s ease;
+  /* Add box-shadow transition */
+  z-index: 1;
+  /* Higher z-index to appear above the line */
+  /* Ensure that the icon's height is taken into account for the line positioning */
+}
+
+.icon-line {
+  position: absolute;
+  bottom: -20px;
+  /* Adjust this so the line starts at the icon's bottom edge */
+  left: 50%;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  /* Center the line horizontally */
+  width: 3px;
+  height: 0px;
+  /* Initial height of the line */
+  background-color: gray;
+  /* Initial color of the line */
+  transition: height 0.3s ease;
+  z-index: 0;
+  /* Lower z-index to appear behind the icon */
+}
+
+.social-link-wrapper:hover .social-icon {
+  color: white;
+  /* Icon color changes to white on hover */
+  transform: translateY(-2px);
+  /* Icon moves up on hover */
+
+}
+
+.social-link-wrapper:hover .icon-line {
+  height: 10px;
+  /* Expanded line height on hover */
+  background-color: teal;
+  /* Line color changes on hover */
+}
+
+.menu-item.active .line {
+  width: 40px;
+  /* Same as hover width */
+  background: teal;
+  /* Same as hover color */
+}
+
+.menu-item.active .menu-link {
+  color: rgb(255, 255, 255);
+  /* Same as hover color */
+  transform: translateX(20px);
+  /* Same as hover transform */
+}
+
+/* Left-hand side with adjusted transparency */
+.fixed.top-0.left-0 {
+  background-color: #00000000 !important;
+  /* This is a light pink color */
+  display: flex;
+  flex-direction: column;
+  padding-left: 100px;
+  justify-content: center;
+  /* Center content vertically */
+  align-items: flex-start;
+  /* Align content to the left horizontally */
+}
+
+.menu-bar {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-bg-gradient {
+  background: linear-gradient(to right, #000000, #002d2b);
+  /* Teal-black gradient */
+}
+
+.content-padding {
+  padding-left: 100px;
+  /* Adjust as needed */
+  /* Adjust as needed */
+  padding-top: 100px;
+  /* Adjust as needed */
+  padding-bottom: 100px !important;
+}
+
+.cursor-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* Make sure this doesn't interfere with mouse events */
+  z-index: -1;
+  /* Keep it behind all other content */
+  background: black;
+  /* Default background */
+}
+
+.project-title-wrapper {
+  display: flex;
+  /* Align items horizontally */
+  align-items: center;
+  /* Center items vertically */
+  gap: 3x
+}
+
+
+.arrow-icon {
+  color: rgb(169, 169, 169);
+  /* Set the color to inherit from parent or be explicitly set */
+  transition: transform 0.3s ease, color 0.3s ease;
+  /* Add color transition */
+  margin-left: 5px;
+  /* Space between the name and the icon */
+  cursor: pointer;
+  /* Change cursor to pointer when hovering over the icon */
+}
+
+.project-card-link:hover .arrow-icon {
+  transform: translate(5px, -5px);
+  /* Moves up and right on hover */
+  color: rgb(0, 207, 196);
+  /* Change color to teal on hover */
+}
+
+.project-card-link:hover .project-title {
+
+  color: rgb(0, 207, 196);
+  /* Change color to teal on hover */
+}
+
+
+.arrow-icon:hover {
+  transform: translate(5px, -5px);
+  color: rgb(0, 207, 196);
+}
+
+
+
+@keyframes fadeInBackground {
+  from {
+    background-color: transparent;
+    /* Start with a transparent background */
+  }
+
+  to {
+    background-color: #ffffff09;
+    /* End with your desired background color */
+  }
+}
+
+@media (max-width: 1023px) {
+  /* This media query targets screens at or below the 1023px width */
+
+  .sidebar {
+    display: none !important;
+  }
+
+  .navbar .personal-info {
+    display: none;
+    /* Hide in the navbar for smaller screens */
+  }
+
+
+  .content-padding .personal-info {
+    display: block;
+    /* Show in the main content for smaller screens */
+  }
+
+  .content-padding {
+    padding-left: 30px;
+    /* Reduced padding */
+    padding-right: 30px;
+    /* Reduced padding */
+  }
+
+
+}
+
+@media (max-width: 768px) {
+  .project-date{
+    display: none;
+  }
+
+  .sidebar {
+    display: none !important;
+  }
+
+  /* This media query targets screens at or below the 764px width */
+
+  .navbar .personal-info {
+    display: none;
+    /* Hide in the navbar for smaller screens */
+  }
+
+  .content-padding .personal-info {
+    display: block;
+    /* Show in the main content for smaller screens */
+  }
+
+  .content-padding {
+    padding-left: 30px;
+    /* Reduced padding */
+    padding-right: 30px;
+    /* Reduced padding */
+  }
+
+
+  .project-card-link .arrow-icon,
+  .project-card-link .project-title,
+  .link-tag {
+    pointer-events: all;
+    /* Enable click on header and arrow */
+  }
+
+
+ 
+
+  .project-card-link:hover .arrow-icon {
+    transform: translate(5px, -5px);
+    color: rgb(0, 207, 196);
+  }
+  .project-image-container {
+    display: none;
+  }
+
+
+
+}
+
+
+@media (min-width: 1024px) {
+
+
+  /* This media query targets screens above 1023px width */
+  .content-width {
+    width: 66.67%;
+    /* 2/3 of the width */
+  }
+
+  .sidebar .personal-info {
+    display: block;
+    /* Show in the navbar for larger screens */
+  }
+
+  .content-padding .personal-info {
+    display: none;
+    /* Hide in the main content for larger screens */
+  }
+
+  .content-padding {
+    padding-left: 100px;
+    /* Original padding */
+    padding-right: 100px;
+    /* Original padding */
+  }
+
+
+
+}
+
+.menu-link {
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes fadeInTopDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flex.h-screen.overflow-hidden.custom-bg-gradient {
+  animation: fadeInTopDown 1s ease forwards;
+}
+
+
+
+
+.link-tag {
+  display: inline-flex;
+  align-items: center;
+  color: rgb(4, 182, 173);
+  border-radius: 20px;
+  padding: 4px 0px;
+  margin-right: 5px;
+  font-size: 10px;
+  text-decoration: none;
+  /* Remove underline from link */
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding-right: 10px;
+  margin-top: 10px;
+}
+
+.link-tag:hover {
+  color: rgb(0, 207, 196);
+}
+
+
+.icon-size {
+  /* Adjust the size to match existing tags */
+  width: 10px;
+  /* Example size */
+  height: 10px;
+  /* Example size */
+  margin-right: 5px;
+  /* Space between icon and text */
+}
+
+.custom-bg-gradient {
+  background: linear-gradient(to top left, black, rgb(1, 39, 40));
+}
+
+
+/* Style for screens wider than 768px */
+@media (min-width: 768px) {
+  .custom-bg-gradient {
+    background: radial-gradient(circle at var(--cursorX) var(--cursorY), rgba(0, 90, 90, 0.4), transparent), black;
+  }
+
+  .project-card-link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Overlay layer */
+    cursor: pointer;
+  }
+
+  .project-card-content {
+    position: relative; /* Establish a stacking context */
+    z-index: 2; /* Above the overlay */
+  }
+
+  .link-tag {
+    z-index: 3; /* Ensures these links are above the project-card-content */
+    position: relative; /* Needed for z-index to take effect */
+    pointer-events: all; /* Ensures that these elements are clickable */
+  }
+
+
+
+}
+
+
+/* Style for the links */
+.faded-hover-link {
+  color: inherit; /* Keeps the link color consistent with the surrounding text */
+  font-weight: bold; /* Keeps the font bold */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Hover state for the links */
+.faded-hover-link:hover {
+  color: rgb(0, 207, 196);
+}
+
+.project-date {
+  color: #777; /* Change the color as needed */
+  font-size: 0.75rem; /* Small text size */
+  text-align: center; /* Center the text */
+  margin-top: 0.5rem; /* Space above the date text */
 }
