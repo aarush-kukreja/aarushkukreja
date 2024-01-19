@@ -43,7 +43,7 @@ const experiences: ProjectType[] = [
   },
   {
     name: 'Developer · MIT ESP',
-    description: 'Optimized websites and stabilized web releases. Ensured smooth registration nationwide for Splash programs nationwide.',
+    description: 'Optimized websites and stabilized web releases. Ensured smooth registration for Splash programs nationwide.',
     tags: ['React', 'Next.js', 'Tailwind CSS', 'Typescript', 'CloudFlare JS', 'Amazon CloudFront', 'Microsoft Ajax', 'jQuery CDN', 'Ubuntu', 'VirtualBox'],
     link: 'https://esp.mit.edu/learn/index.html',
     date: '2021 — 2023'
@@ -311,31 +311,6 @@ export function Component() {
   const menuBarThreshold = 1023; // Set your threshold here
 
 
-  useEffect(() => {
-    // Adjust the bottom padding of the content container
-    const adjustPadding = () => {
-      const availableHeight = window.innerHeight; // Get the viewport height
-      const topPadding = 160; // Assuming pt-20 translates to 160px
-      const bottomPadding = 40; // Assuming you want to balance it with 40px bottom padding
-
-      if (contentContainerRef.current) {
-        const currentScrollHeight = contentContainerRef.current.scrollHeight;
-        if (currentScrollHeight + topPadding + bottomPadding > availableHeight) {
-          // If the content overflows the available height, adjust the bottom padding
-          contentContainerRef.current.style.paddingBottom = `${bottomPadding}px`;
-        }
-      }
-    };
-
-    // Call the function on mount and window resize
-    adjustPadding();
-    window.addEventListener('resize', adjustPadding);
-
-    return () => {
-      window.removeEventListener('resize', adjustPadding);
-    };
-  }, []);
-
   const scrollToRef = (ref: React.RefObject<HTMLElement>) => {
     if (contentContainerRef.current && ref.current) {
       const scrollPosition = ref.current.offsetTop - 40;
@@ -391,15 +366,16 @@ export function Component() {
   }, [typewriting, magicWord, magicWords.length]);
 
   return (
-    <div className="flex h-screen overflow-hidden custom-bg-gradient">
+    
+    <div className="flex h-[calc(100dvh)] overflow-y-auto custom-bg-gradient ">
       {/* Adjust the width class here, for example from w-1/3 to w-1/2 */}
       {renderMenu()}
 
       {/* right hand side */}
       <div
         ref={contentContainerRef}
-        className="flex flex-col ml-auto content-width pt-10 overflow-y-scroll content-padding custom-scrollbar"
-      >
+        className="flex flex-col ml-auto content-width pt-10 overflow-y-auto content-padding custom-scrollbar"
+        >
 
         <div className="personal-info md:hidden">
           <h1 className="font-bold text-4xl mb-2">Aarush Kukreja</h1>
@@ -456,7 +432,7 @@ export function Component() {
 
 
         <h2 ref={nowRef} className="text-xl font-bold mb-2" id="about">Now</h2>
-        <p className="text mb-2" style={{ paddingLeft: '25px' }}>
+        <p className="text mb-2" >
           {"\n Pursuing a Bachelor's degree in Computer Science. Studying AutoML, neural networks, and GenAI. Involved in Princeton Blockchain, AI Alignment, and Entrepreneurship. Leaving things better than I found them."
             .split('\n')
             .map((line, index) => (
@@ -496,13 +472,11 @@ export function Component() {
           ))}
         </div>
 
-        <div className="flex items-center ml-3 h-screen">
+        <div className="flex items-center ml-3">
           <h2 className="text-xs mt-20">
             Built with <a href="https://nextjs.org/" className="faded-hover-link">Next.js</a> and <a href="https://tailwindcss.com/" className="faded-hover-link">Tailwind CSS</a>, deployed with <a href="https://vercel.com/" className="faded-hover-link">Vercel</a>, and coded in <a href="https://code.visualstudio.com/" className="faded-hover-link cursor-pointer">Visual Studio Code</a>. All work by Aarush Kukreja.
           </h2>
         </div>
-
-
       </div>
     </div>
   )
