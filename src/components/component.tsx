@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -368,17 +367,25 @@ export function Component() {
     }
   }, [typewriting, magicWord, magicWords.length]);
 
+
+
+
+
+
   return (
-    
-    <div className="flex h-[calc(100dvh)] overflow-y-auto custom-bg-gradient ">
+
+    <div className="flex h-[calc(100dvh)] overflow-auto custom-bg-gradient ">
       {/* Adjust the width class here, for example from w-1/3 to w-1/2 */}
-      {renderMenu()}
+      <div className="menu-container">
+        {renderMenu()}
+      </div>
+
 
       {/* right hand side */}
       <div
         ref={contentContainerRef}
-        className="flex flex-col ml-auto content-width pt-10 overflow-y-auto content-padding custom-scrollbar"
-        >
+        className="flex flex-col ml-auto content-width pt-10 lg:overflow-y-auto content-padding custom-scrollbar"
+      >
 
         <div className="personal-info md:hidden">
           <h1 className="font-bold text-4xl mb-2">Aarush Kukreja</h1>
@@ -433,21 +440,25 @@ export function Component() {
           </div>
         </div>
 
+        <div className="now-container ">
+          <h2 ref={nowRef} className="text-xl font-bold mb-2 sticky top-0 z-20 -mx-6 mb-4 mt-4 w-screen bg-background/0 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 md:sticky md:top-0 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0"
+            id="now">Now</h2>
+          <p className="text mb-2" >
+            {"\n Pursuing a Bachelor's degree in Computer Science. Studying AutoML, neural networks, and GenAI. Involved in Princeton Blockchain, AI Alignment, and Entrepreneurship. Leaving things better than I found them. \n"
+              .split('\n')
+              .map((line, index) => (
+                <span key={index}>
+                  {line}
+                  <br />
+                </span>
+              ))}
+          </p>
+        </div>
 
-        <h2 ref={nowRef} className="text-xl font-bold mb-2" id="about">Now</h2>
-        <p className="text mb-2" >
-          {"\n Pursuing a Bachelor's degree in Computer Science. Studying AutoML, neural networks, and GenAI. Involved in Princeton Blockchain, AI Alignment, and Entrepreneurship. Leaving things better than I found them."
-            .split('\n')
-            .map((line, index) => (
-              <span key={index}>
-                {line}
-                <br />
-              </span>
-            ))}
-        </p>
-
-        <h2 ref={experienceRef} className="text-xl font-bold mb-2 mt-8">Experience</h2>
         <div className="project-cards-container ">
+          <h2 ref={experienceRef} className="text-xl font-bold mb-2 sticky top-0 z-20 -mx-6 mb-4 mt-4 w-screen bg-background/0 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 md:sticky md:top-0 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0"
+            id="experiences">Experiences</h2>
+
           {experiences.map((experience) => (
             <ProjectCard
               key={experience.name}
@@ -461,8 +472,10 @@ export function Component() {
         </div>
 
 
-        <h2 ref={projectsRef} className="text-xl font-bold mb-2 mt-8">Projects</h2>
         <div className="project-cards-container ">
+          <h2 ref={projectsRef} className="text-xl font-bold mb-2 sticky top-0 z-20 -mx-6 mb-4 mt-4 w-screen bg-background/0 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 md:sticky md:top-0 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0"
+            id="projects">Projects</h2>
+
           {projects.map((project) => (
             <ProjectCard
               key={project.name}
@@ -478,6 +491,17 @@ export function Component() {
         <div className="flex items-center ml-3">
           <h2 className="text-xs mt-20">
             Built with <a href="https://nextjs.org/" className="faded-hover-link">Next.js</a> and <a href="https://tailwindcss.com/" className="faded-hover-link">Tailwind CSS</a>, deployed with <a href="https://vercel.com/" className="faded-hover-link">Vercel</a>, and coded in <a href="https://code.visualstudio.com/" className="faded-hover-link cursor-pointer">Visual Studio Code</a>. All work by Aarush Kukreja.
+            {
+              "\n\n\n\n\n".split('\n').map((line, index) => (
+                <span key={index} className="block lg:hidden" style={{ userSelect: 'none' }}>
+                  {line}
+                  <br />
+                </span>
+              ))
+            }
+
+
+
           </h2>
         </div>
       </div>
