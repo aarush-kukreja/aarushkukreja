@@ -74,19 +74,22 @@ const projects: ProjectType[] = [
     name: 'Loading...',
     description: 'Something stealthy\'s cooking...',
     tags: ['...'],
-    link: 'https://img.freepik.com/free-photo/3d-rendering-emotions_23-2149081943.jpg'
+    imageUrl: 'https://i.pinimg.com/736x/16/03/5c/16035c929a7528572ddba708dc886c65.jpg',
+    link: '404'
   },
   {
     name: 'Loading....',
     description: 'Something stealthy\'s cooking...',
     tags: ['...', '...'],
-    link: 'https://img.freepik.com/free-photo/3d-rendering-emotions_23-2149081943.jpg'
+    imageUrl: 'https://wallpapers.com/images/hd/widescreen-view-b2-stealth-bomber-miyxv36tnmd6xjbj.jpg',
+    link: '404'
   },
   {
     name: 'Loading.....',
     description: 'Something stealthy\'s cooking...',
     tags: ['...', '...', '...'],
-    link: 'https://img.freepik.com/free-photo/3d-rendering-emotions_23-2149081943.jpg'
+    imageUrl: 'https://t3.ftcdn.net/jpg/05/14/67/98/360_F_514679805_LuWEcXzeEmJfErQNK1mgTC6tcLmjLp75.jpg',
+    link: '404'
   },
 ];
 
