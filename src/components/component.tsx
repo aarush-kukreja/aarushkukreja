@@ -458,7 +458,7 @@ export function Component() {
 
         <div className="project-cards-container ">
           <h2 ref={experienceRef}
-            className="text-xl font-bold mb-2 sticky top-0 z-20 mb-4 mt-4 bg-background/0 py-5 backdrop-blur md:sticky md:top-0 lg:relative lg:top-auto lg:w-full lg:py-0"
+            className=" text-xl font-bold mb-2 sticky top-0 z-20 mb-4 mt-4 bg-background/0 py-5 backdrop-blur md:sticky md:top-0 lg:relative lg:top-auto lg:w-full lg:py-0"
             id="experiences">Experiences</h2>
 
           {experiences.map((experience) => (
@@ -511,3 +511,4 @@ export function Component() {
     </div>
   )
 }
+
