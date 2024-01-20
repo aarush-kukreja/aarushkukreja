@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -441,7 +442,8 @@ export function Component() {
         </div>
 
         <div className="now-container ">
-          <h2 ref={nowRef} className="text-xl font-bold mb-2 sticky top-0 z-20 -mx-6 mb-4 mt-4 w-screen bg-background/0 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 md:sticky md:top-0 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0"
+          <h2 ref={nowRef}
+            className="text-xl font-bold mb-2 sticky top-0 z-20 mb-4 mt-4 bg-background/0 py-5 backdrop-blur md:sticky md:top-0 lg:relative lg:top-auto lg:w-full lg:py-0"
             id="now">Now</h2>
           <p className="text mb-2" >
             {"\n Pursuing a Bachelor's degree in Computer Science. Studying AutoML, neural networks, and GenAI. Involved in Princeton Blockchain, AI Alignment, and Entrepreneurship. Leaving things better than I found them. \n"
@@ -456,7 +458,8 @@ export function Component() {
         </div>
 
         <div className="project-cards-container ">
-          <h2 ref={experienceRef} className="text-xl font-bold mb-2 sticky top-0 z-20 -mx-6 mb-4 mt-4 w-screen bg-background/0 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 md:sticky md:top-0 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0"
+          <h2 ref={experienceRef}
+            className="text-xl font-bold mb-2 sticky top-0 z-20 mb-4 mt-4 bg-background/0 py-5 backdrop-blur md:sticky md:top-0 lg:relative lg:top-auto lg:w-full lg:py-0"
             id="experiences">Experiences</h2>
 
           {experiences.map((experience) => (
@@ -473,7 +476,8 @@ export function Component() {
 
 
         <div className="project-cards-container ">
-          <h2 ref={projectsRef} className="text-xl font-bold mb-2 sticky top-0 z-20 -mx-6 mb-4 mt-4 w-screen bg-background/0 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 md:sticky md:top-0 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0"
+          <h2 ref={projectsRef}
+            className="text-xl font-bold mb-2 sticky top-0 z-20 mb-4 mt-4 bg-background/0 py-5 backdrop-blur md:sticky md:top-0 lg:relative lg:top-auto lg:w-full lg:py-0"
             id="projects">Projects</h2>
 
           {projects.map((project) => (
