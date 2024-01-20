@@ -5,8 +5,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 0, 25, 25;
     --background-end-rgb: 0, 0, 0;
   }
 }
@@ -439,6 +439,7 @@ body {
   /* Adjust as needed */
   /* Adjust as needed */
   padding-top: 100px;
+  
   /* Adjust as needed */
   padding-bottom: 100px !important;
 }
@@ -552,6 +553,7 @@ body {
     /* Reduced padding */
     padding-right: 30px;
     /* Reduced padding */
+
   }
 
 
