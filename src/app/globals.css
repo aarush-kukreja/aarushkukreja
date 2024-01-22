@@ -112,12 +112,12 @@ body {
 .menu-item:hover .menu-link {
   color: #ffffff;
   /* Bright color on hover */
-  transform: translateX(40px);
+  transform: translateX(25px);
   /* Moves the text to the right */
 }
 
 .menu-item:hover .line {
-  width: 60px;
+  width: 45px;
   /* Increased width on hover */
   background: teal;
   /* Brighter color on hover */
@@ -722,4 +722,3 @@ body {
   text-align: center; /* Center the text */
   margin-top: 0.5rem; /* Space above the date text */
 }
-
