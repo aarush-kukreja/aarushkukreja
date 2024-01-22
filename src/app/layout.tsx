@@ -6,6 +6,9 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.aarushkukreja.com"), // Create a URL object
+  alternates: {
+    canonical: "https://aarushkukreja.com",
+  },
   title: 'Aarush Kukreja',
   description:
     "Aarush Kukreja is a computer science student at Princeton University studying computer science and quant finance.",
