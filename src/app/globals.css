@@ -12,8 +12,9 @@
 }
 
 body {
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-  color: rgb(176, 217, 215) !important; /* Light gray color for text */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  color: rgb(176, 217, 215) !important;
+  /* Light gray color for text */
   background: linear-gradient(to bottom,
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
@@ -88,7 +89,8 @@ body {
   font-family: sans-serif;
   font-size: 15px;
   font-weight: bolder;
-  transition: color 0.3s ease, transform 0.3s ease; /* Consolidated transition property */
+  transition: color 0.3s ease, transform 0.3s ease;
+  /* Consolidated transition property */
   /* Add box-shadow transition */
   text-decoration: none;
   /* Remove underline from links */
@@ -196,7 +198,7 @@ body {
   padding: 17px;
   border-radius: 20px;
   background-color: #ffffff00;
-  
+
   /* White text */
   transition: opacity 0.3s ease;
   /* Smooth transition for the dimming effect */
@@ -244,9 +246,12 @@ body {
   overflow: hidden;
 }
 
-.project-image-container, .project-date {
-  min-width: 125px; /* This ensures that the width does not go below 125px */
-  min-height: 75px; /* This ensures that the height does not go below 75px */
+.project-image-container,
+.project-date {
+  min-width: 125px;
+  /* This ensures that the width does not go below 125px */
+  min-height: 75px;
+  /* This ensures that the height does not go below 75px */
   /* ... other styles ... */
 }
 
@@ -273,17 +278,24 @@ body {
 }
 
 .project-date {
-  width: 125px; /* Same as image container width */
-  height: 75px; /* Same as image container height */
+  width: 125px;
+  /* Same as image container width */
+  height: 75px;
+  /* Same as image container height */
   display: flex;
   justify-content: center;
   align-items: center;
-  color:  rgb(176, 217, 215) !important;
-  margin-right: 20px; /* Same margin as image container */
-  border-radius: 8px; /* Same border radius as image container */
-  font-size: 10px !important; /* Keeping the text size as earlier */
-  text-align: center; /* Center the text */
-  padding: 10px; /* Adjust padding to ensure the text fits well */
+  color: rgb(176, 217, 215) !important;
+  margin-right: 20px;
+  /* Same margin as image container */
+  border-radius: 8px;
+  /* Same border radius as image container */
+  font-size: 10px !important;
+  /* Keeping the text size as earlier */
+  text-align: center;
+  /* Center the text */
+  padding: 10px;
+  /* Adjust padding to ensure the text fits well */
   /* You can add background, border, or other styles to match the design of your card */
 }
 
@@ -294,8 +306,10 @@ body {
   white-space: normal;
   overflow-wrap: break-word;
   /* or word-wrap: break-word; */
-  justify-content: flex-start; /* Align flex items to the start of the container */
-  text-align: left; /* Align text to the left */
+  justify-content: flex-start;
+  /* Align flex items to the start of the container */
+  text-align: left;
+  /* Align text to the left */
   flex: 1;
   /* Allow the content to fill up the remaining space */
   padding-left: 0.5rem;
@@ -325,7 +339,8 @@ body {
 }
 
 .project-card.bright .tag {
-  color: white; /* Sets the text color to white */
+  color: white;
+  /* Sets the text color to white */
 }
 
 
@@ -439,7 +454,7 @@ body {
   /* Adjust as needed */
   /* Adjust as needed */
   padding-top: 100px;
-  
+
   /* Adjust as needed */
   padding-bottom: 100px !important;
 }
@@ -485,29 +500,37 @@ body {
   /* Change color to teal on hover */
 }
 
-.link-tag, .project-title {
-  position: relative; /* Added for positioning the pseudo-element */
+.link-tag,
+.project-title {
+  position: relative;
+  /* Added for positioning the pseudo-element */
 }
 
 .project-title::before {
   content: '';
   position: absolute;
   width: 0;
-  height: 1px; /* Adjust the thickness of the underline */
-  bottom: 0; /* Positioning at the bottom of the element */
+  height: 1px;
+  /* Adjust the thickness of the underline */
+  bottom: 0;
+  /* Positioning at the bottom of the element */
   left: 0;
-  background-color: rgb(0, 207, 196); /* Color of the underline */
+  background-color: rgb(0, 207, 196);
+  /* Color of the underline */
   visibility: hidden;
-  transition: width 0.2s ease-in-out, visibility 0.3s ease; /* Animation for the underline */
+  transition: width 0.2s ease-in-out, visibility 0.3s ease;
+  /* Animation for the underline */
 }
 
 .project-card-link:hover .project-title::before {
   visibility: visible;
-  width: 100%; /* Underline grows to full width on hover */
+  width: 100%;
+  /* Underline grows to full width on hover */
 }
 
 .project-card-link:hover .project-title {
-  color: rgb(0, 207, 196); /* Change color to teal on hover */
+  color: rgb(0, 207, 196);
+  /* Change color to teal on hover */
 }
 
 
@@ -560,7 +583,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .project-date{
+  .project-date {
     display: none;
   }
 
@@ -587,17 +610,18 @@ body {
     /* Reduced padding */
   }
 
-  
-
- 
 
 
- 
+
+
+
+
 
   .project-card-link:hover .arrow-icon {
     transform: translate(5px, -5px);
     color: rgb(0, 207, 196);
   }
+
   .project-image-container {
     display: none;
   }
@@ -706,9 +730,12 @@ body {
 
 /* Style for the links */
 .faded-hover-link {
-  color: inherit; /* Keeps the link color consistent with the surrounding text */
-  font-weight: bold; /* Keeps the font bold */
-  transition: color 0.3s ease; /* Smooth transition for color change */
+  color: inherit;
+  /* Keeps the link color consistent with the surrounding text */
+  font-weight: bold;
+  /* Keeps the font bold */
+  transition: color 0.3s ease;
+  /* Smooth transition for color change */
 }
 
 /* Hover state for the links */
@@ -717,8 +744,12 @@ body {
 }
 
 .project-date {
-  color: #777; /* Change the color as needed */
-  font-size: 0.75rem; /* Small text size */
-  text-align: center; /* Center the text */
-  margin-top: 0.5rem; /* Space above the date text */
+  color: #777;
+  /* Change the color as needed */
+  font-size: 0.75rem;
+  /* Small text size */
+  text-align: center;
+  /* Center the text */
+  margin-top: 0.5rem;
+  /* Space above the date text */
 }
