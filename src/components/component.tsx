@@ -35,8 +35,8 @@ const experiences: ProjectType[] = [
     tags: ['MATLAB', 'Python', 'SQL', 'Java'],
     link: 'https://www.spacesolar.caltech.edu/',
     links: [
-      { url: 'https://www.techrxiv.org/articles/preprint/Investigating_the_Optimal_Use_Case_For_Space_Solar_Power_Systems/23935317', text: 'Publication · IEEE · Aug 15, 2023' },
-      { url: 'https://ieeexplore.ieee.org/document/9926937', text: 'Preprint · IEEE · Oct 14, 2022' }
+      { url: 'https://www.techrxiv.org/articles/preprint/Investigating_the_Optimal_Use_Case_For_Space_Solar_Power_Systems/23935317', text: 'Preprint · IEEE · Aug 15, 2023' },
+      { url: 'https://ieeexplore.ieee.org/document/9926937', text: 'Publication · IEEE · Oct 14, 2022' }
     ],
     date: '2021 — 2023'
   },
