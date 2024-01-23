@@ -114,54 +114,55 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const cardClass = isHovered ? 'bright' : anyCardHovered ? 'dim' : '';
 
   return (
+    <div className="fade-in-element">
+      <div
+        onMouseEnter={() => onEnter(project.name)}
+        onMouseLeave={onLeave}
+        className={`project-card ${cardClass}`}
+      >
+        <div className="project-card-content flex items-center">
+          {project.imageUrl ? (
+            <div className="project-image-container">
+              <img src={project.imageUrl} alt={project.name} className="project-image" />
+            </div>
+          ) : project.date ? (
+            <div className="project-date">{project.date}</div>
+          ) : null}
 
-    <div
-      onMouseEnter={() => onEnter(project.name)}
-      onMouseLeave={onLeave}
-      className={`project-card ${cardClass}`}
-    >
-      <div className="project-card-content flex items-center">
-        {project.imageUrl ? (
-          <div className="project-image-container">
-            <img src={project.imageUrl} alt={project.name} className="project-image" />
-          </div>
-        ) : project.date ? (
-          <div className="project-date">{project.date}</div>
-        ) : null}
+          <div className="project-card-details">
+            <Link legacyBehavior href={project.link} passHref>
+              <a target="_blank" rel="noopener noreferrer" className="project-card-link">
+                <div className="project-title-wrapper">
+                  <h3 className="project-title text font-bold">
+                    {project.name}
+                  </h3>
+                  <TbArrowUpRight className="arrow-icon" /> {/* Arrow icon moved here */}
+                </div>
+              </a>
+            </Link>
 
-        <div className="project-card-details">
-          <Link legacyBehavior href={project.link} passHref>
-            <a target="_blank" rel="noopener noreferrer" className="project-card-link">
-              <div className="project-title-wrapper">
-                <h3 className="project-title text font-bold">
-                  {project.name}
-                </h3>
-                <TbArrowUpRight className="arrow-icon" /> {/* Arrow icon moved here */}
-              </div>
-            </a>
-          </Link>
-
-          <p className="project-description text-sm">
-            {project.description}
-          </p>
-          <div className="tag-container flex flex-wrap mt-2">
-            {project.tags.map((tag, index) => (
-              <span key={index} className="tag">{tag}</span>
-            ))}
-          </div>
-
-          {project.links && (
-            <div className="link-container flex flex-wrap">
-              {project.links.map((link, index) => (
-                <Link legacyBehavior href={link.url} key={index} passHref>
-                  <a className="link-tag" target="_blank" rel="noopener noreferrer">
-                    <FiLink className="icon-size" />
-                    <span>{link.text}</span>
-                  </a>
-                </Link>
+            <p className="project-description text-sm">
+              {project.description}
+            </p>
+            <div className="tag-container flex flex-wrap mt-2">
+              {project.tags.map((tag, index) => (
+                <span key={index} className="tag">{tag}</span>
               ))}
             </div>
-          )}
+
+            {project.links && (
+              <div className="link-container flex flex-wrap">
+                {project.links.map((link, index) => (
+                  <Link legacyBehavior href={link.url} key={index} passHref>
+                    <a className="link-tag" target="_blank" rel="noopener noreferrer">
+                      <FiLink className="icon-size" />
+                      <span>{link.text}</span>
+                    </a>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -220,17 +221,17 @@ export function Component() {
     const menuItems = (
       <>
         <div className="menu-bar space-y-6" style={{ padding: '20px 0' }}>
-          <div className={`menu-item ${activeSection === 'now' ? 'active' : ''}`}
+          <div className={`menu-item fade-in-element ${activeSection === 'now' ? 'active' : ''}`}
             onClick={() => scrollToRef(nowRef)}>
             <span className="line"></span>
             <a className="menu-link cursor-pointer">Now</a>
           </div>
-          <div className={`menu-item ${activeSection === 'experience' ? 'active' : ''}`}
+          <div className={`menu-item fade-in-element ${activeSection === 'experience' ? 'active' : ''}`}
             onClick={() => scrollToRef(experienceRef)}>
             <span className="line"></span>
             <a className="menu-link cursor-pointer">Experience</a>
           </div>
-          <div className={`menu-item ${activeSection === 'projects' ? 'active' : ''}`}
+          <div className={`menu-item fade-in-element ${activeSection === 'projects' ? 'active' : ''}`}
             onClick={() => scrollToRef(projectsRef)}>
             <span className="line"></span>
             <a className="menu-link cursor-pointer">Projects</a>
@@ -242,18 +243,18 @@ export function Component() {
 
     // Return the sidebar menu JSX
     return (
-      <div className="sidebar fixed top-0 left-0 h-full p-10 w-1/3 space-y-4 z-10 backdrop-filter-blur-lg bg-opacity-50 bg-black">
-        <h1 className="text-4xl font-bold mb-2">Aarush Kukreja</h1>
-        <h2 className="text-xl mb-5">
+      <div className="sidebar fixed top-0 left-0 h-full p-10 w-1/3 space-y-4 z-10 backdrop-filter-blur-lg bg-opacity-50 bg-black ">
+        <h1 className="text-4xl font-bold mb-2 fade-in-element">Aarush Kukreja</h1>
+        <h2 className="text-xl mb-5 fade-in-element">
           Undergrad @ <span className="font-bold text-teal-500">Princeton</span>
         </h2>
-        <p className=" mb-6">
+        <p className=" mb-6 fade-in-element">
           Building {typewriting}
           <span className={`blinking-cursor ${isTypingDone ? 'fading' : ''}`}>|</span>
         </p>
         {menuItems}
         <div className="social-links flex space-x-4 mt-8"> {/* Increased margin-top */}
-          <div className="social-link-wrapper">
+          <div className="social-link-wrapper fade-in-element">
             <Link legacyBehavior href="https://github.com/aarush-kukreja" passHref>
               <a className="social-icon" aria-label="GitHub">
                 <FiGithub />
@@ -261,7 +262,7 @@ export function Component() {
               </a>
             </Link>
           </div>
-          <div className="social-link-wrapper">
+          <div className="social-link-wrapper fade-in-element">
             <Link legacyBehavior href="https://x.com/aarush_kukreja" passHref>
               <a className="social-icon" aria-label="X">
                 <FaXTwitter />
@@ -269,7 +270,7 @@ export function Component() {
               </a>
             </Link>
           </div>
-          <div className="social-link-wrapper">
+          <div className="social-link-wrapper fade-in-element">
             <Link legacyBehavior href="https://linkedin.com/in/aarush-kukreja" passHref>
               <a className="social-icon" aria-label="Linkedin">
                 <FiLinkedin />
@@ -277,7 +278,7 @@ export function Component() {
               </a>
             </Link>
           </div>
-          <div className="social-link-wrapper">
+          <div className="social-link-wrapper fade-in-element">
             <Link legacyBehavior href="https://instagram.com/aarushkukreja" passHref>
               <a className="social-icon" aria-label="Instagram">
                 <FiInstagram />
@@ -285,7 +286,7 @@ export function Component() {
               </a>
             </Link>
           </div>
-          <div className="social-link-wrapper">
+          <div className="social-link-wrapper fade-in-element">
             <a href="mailto:aarush.kukreja@princeton.edu" className="social-icon" aria-label="Email">
               <FiMail />
               <span className="icon-line"></span> {/* Vertical line */}
@@ -388,17 +389,17 @@ export function Component() {
       >
 
         <div className="personal-info md:hidden">
-          <h1 className="font-bold text-4xl mb-2">Aarush Kukreja</h1>
-          <h2 className="text-xl mb-5">
+          <h1 className="font-bold text-4xl mb-2 fade-in-element">Aarush Kukreja</h1>
+          <h2 className="text-xl mb-5 fade-in-element">
             Undergrad @ <span className="font-bold text-teal-500">Princeton</span>
           </h2>
-          <p className=" text-xs mb-6">
+          <p className=" text-xs mb-6 fade-in-element">
             Building {typewriting}
             <span className={`blinking-cursor ${isTypingDone ? 'fading' : ''}`}>|</span>
           </p>
 
-          <div className="social-links  space-x-4 mt-9 mb-9"> {/* Increased margin-top */}
-            <div className="social-link-wrapper">
+          <div className="social-links  space-x-4 mt-9 mb-9 "> {/* Increased margin-top */}
+            <div className="social-link-wrapper fade-in-element">
               <Link legacyBehavior href="https://github.com/aarush-kukreja" passHref>
                 <a className="social-icon" aria-label="GitHub">
                   <FiGithub />
@@ -406,7 +407,7 @@ export function Component() {
                 </a>
               </Link>
             </div>
-            <div className="social-link-wrapper">
+            <div className="social-link-wrapper fade-in-element">
               <Link legacyBehavior href="https://x.com/aarush_kukreja" passHref>
                 <a className="social-icon" aria-label="X">
                   <FaXTwitter />
@@ -414,7 +415,7 @@ export function Component() {
                 </a>
               </Link>
             </div>
-            <div className="social-link-wrapper">
+            <div className="social-link-wrapper fade-in-element">
               <Link legacyBehavior href="https://linkedin.com/in/aarush-kukreja" passHref>
                 <a className="social-icon" aria-label="Linkedin">
                   <FiLinkedin />
@@ -422,7 +423,7 @@ export function Component() {
                 </a>
               </Link>
             </div>
-            <div className="social-link-wrapper">
+            <div className="social-link-wrapper fade-in-element">
               <Link legacyBehavior href="https://instagram.com/aarushkukreja" passHref>
                 <a className="social-icon" aria-label="Instagram">
                   <FiInstagram />
@@ -430,7 +431,7 @@ export function Component() {
                 </a>
               </Link>
             </div>
-            <div className="social-link-wrapper">
+            <div className="social-link-wrapper fade-in-element">
               <a href="mailto:aarush.kukreja@princeton.edu" className="social-icon" aria-label="Email">
                 <FiMail />
                 <span className="icon-line"></span> {/* Vertical line */}
@@ -440,11 +441,11 @@ export function Component() {
           </div>
         </div>
 
-        <div className="now-container ">
+        <div className="now-container">
           <h2 ref={nowRef}
-            className="text-xl font-bold mb-2 sticky top-0 z-20 mb-4 mt-4 bg-background/0 py-5 backdrop-blur md:sticky md:top-0 lg:relative lg:top-auto lg:w-full lg:py-0"
+            className="text-xl font-bold mb-2 sticky top-0 z-20 mb-4 mt-4 bg-background/0 py-5 backdrop-blur md:sticky md:top-0 lg:relative lg:top-auto lg:w-full lg:py-0 fade-in-element"
             id="now">Now</h2>
-          <p className="pl-6 mr-6 text mb-2" >
+          <p className="pl-6 mr-6 text mb-2 fade-in-element" >
             {"\n Pursuing a Bachelor's degree in Computer Science. Studying AutoML, neural networks, and GenAI. Involved in Princeton Blockchain, AI Alignment, and Entrepreneurship. Leaving things better than I found them. \n"
               .split('\n')
               .map((line, index) => (
@@ -456,9 +457,9 @@ export function Component() {
           </p>
         </div>
 
-        <div className="project-cards-container ">
+        <div className="project-cards-container">
           <h2 ref={experienceRef}
-            className=" text-xl font-bold mb-2 sticky top-0 z-20 mb-4 mt-4 bg-background/0 py-5 backdrop-blur md:sticky md:top-0 lg:relative lg:top-auto lg:w-full lg:py-0"
+            className=" text-xl font-bold mb-2 sticky top-0 z-20 mb-4 mt-4 bg-background/0 py-5 backdrop-blur md:sticky md:top-0 lg:relative lg:top-auto lg:w-full lg:py-0 fade-in-element"
             id="experiences">Experiences</h2>
 
           {experiences.map((experience) => (
@@ -476,7 +477,7 @@ export function Component() {
 
         <div className="project-cards-container ">
           <h2 ref={projectsRef}
-            className="text-xl font-bold mb-2 sticky top-0 z-20 mb-4 mt-4 bg-background/0 py-5 backdrop-blur md:sticky md:top-0 lg:relative lg:top-auto lg:w-full lg:py-0"
+            className="text-xl font-bold mb-2 sticky top-0 z-20 mb-4 mt-4 bg-background/0 py-5 backdrop-blur md:sticky md:top-0 lg:relative lg:top-auto lg:w-full lg:py-0 fade-in-element"
             id="projects">Projects</h2>
 
           {projects.map((project) => (
@@ -491,7 +492,7 @@ export function Component() {
           ))}
         </div>
 
-        <div className="flex items-center ml-3">
+        <div className="flex items-center ml-3 fade-in-element">
           <h2 className="text-xs mt-20">
             Built with <a href="https://nextjs.org/" className="faded-hover-link">Next.js</a> and <a href="https://tailwindcss.com/" className="faded-hover-link">Tailwind CSS</a>, deployed with <a href="https://vercel.com/" className="faded-hover-link">Vercel</a>, and coded in <a href="https://code.visualstudio.com/" className="faded-hover-link cursor-pointer">Visual Studio Code</a>. All work by Aarush Kukreja.
             {
