@@ -1,11 +1,13 @@
 # Aarush Kukreja's Personal Portfolio Website
 
-## Built With
+Built With:
 
 - **Next.js**: Chosen for its SSR capabilities.
 - **Tailwind CSS**: I like it because of its utility-first approach (I'm lazy).
-- **Deployed on Vercel**: Vercel is my love. My sunshine.
 - **Visual Studio Code**: Definitely didn't use Cursor.
+
+Deployed With:
+- **Vercel**: Vercel is my love. My sunshine.
 
 ## Development Setup
 
