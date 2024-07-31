@@ -11,10 +11,8 @@ import useTypewriter from 'react-typewriter-hook';
 
 const magicWords = [
   "platforms that connect people.",
-  "predictive analysis models.",
-  "algorithms for financial modeling.",
-  "full-stack projects for social impact.",
-  "tools for quantitative finance.",
+  "with LMs.",
+  "projects for social impact.",
   "legos. :)",
 ];
 
@@ -446,7 +444,7 @@ export function Component() {
             className="text-xl font-bold mb-2 sticky top-0 z-20 mb-4 mt-4 bg-background/0 py-5 backdrop-blur md:sticky md:top-0 lg:relative lg:top-auto lg:w-full lg:py-0 fade-in-element"
             id="now">Now</h2>
           <p className="pl-6 mr-6 text mb-2 fade-in-element" >
-            {"\n Pursuing a Bachelor's degree in Computer Science. Studying AutoML, neural networks, and GenAI. Involved in Princeton Blockchain, AI Alignment, and Entrepreneurship. Leaving things better than I found them. \n"
+            {"\n Langchaining, RAGing, fine-tuning. \n"
               .split('\n')
               .map((line, index) => (
                 <span key={index}>
