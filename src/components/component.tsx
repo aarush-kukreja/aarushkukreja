@@ -444,7 +444,7 @@ export function Component() {
             className="text-xl font-bold mb-2 sticky top-0 z-20 mb-4 mt-4 bg-background/0 py-5 backdrop-blur md:sticky md:top-0 lg:relative lg:top-auto lg:w-full lg:py-0 fade-in-element"
             id="now">Now</h2>
           <p className="pl-6 mr-6 text mb-2 fade-in-element" >
-            {"\n Langchaining, RAGing, fine-tuning. \n"
+            {"\n Building something \n"
               .split('\n')
               .map((line, index) => (
                 <span key={index}>
