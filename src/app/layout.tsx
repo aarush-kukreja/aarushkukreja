@@ -22,11 +22,6 @@ export const metadata: Metadata = {
     description:
       "Aarush Kukreja is a computer science student at Princeton University studying computer science and quant finance.",
     url: "https://aarushkukreja.com",
-    images: [
-      {
-        url: "./Card.png",
-      },
-    ],
   },
 }
 
