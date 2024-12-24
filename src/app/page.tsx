@@ -181,7 +181,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="social-link-wrapper fade-in-element">
-            <Link legacyBehavior href="https://x.com/aarush_kukreja" passHref>
+            <Link legacyBehavior href="https://x.com/4aru5h" passHref>
               <a className="social-icon" aria-label="X">
                 <FaXTwitter size={20} />
                 <span className="icon-line"></span>
