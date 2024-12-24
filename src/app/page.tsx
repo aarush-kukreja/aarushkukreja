@@ -24,13 +24,8 @@ type ProjectType = {
   date?: string;
 };
 
-const experiences: ProjectType[] = [
-  // Keep other existing experiences as needed
-];
-
-const projects: ProjectType[] = [
-  
-];
+const experiences: ProjectType[] = [];
+const projects: ProjectType[] = [];
 
 type ProjectCardProps = {
   project: ProjectType;
@@ -111,32 +106,15 @@ export default function Home() {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const magicWord = magicWords[index];
   const typewriting = useTypewriter(magicWord);
-  const nowRef = useRef<HTMLHeadingElement>(null);
-  const experienceRef = useRef<HTMLHeadingElement>(null);
-  const projectsRef = useRef<HTMLHeadingElement>(null);
   const contentContainerRef = useRef<HTMLDivElement>(null);
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const anyCardHovered = hoveredProject !== null;
 
   useEffect(() => {
     const handleScroll = () => {
-      const positions = {
-        now: nowRef.current?.offsetTop,
-        experience: experienceRef.current?.offsetTop,
-        projects: projectsRef.current?.offsetTop,
-      };
-
       const scrollPosition = contentContainerRef.current?.scrollTop;
       if (scrollPosition !== undefined) {
-        if (positions.now !== undefined && scrollPosition >= positions.now - 100 && (positions.experience === undefined || scrollPosition < positions.experience - 100)) {
-          setActiveSection('now');
-        } else if (positions.experience !== undefined && scrollPosition >= positions.experience - 100 && (positions.projects === undefined || scrollPosition < positions.projects - 100)) {
-          setActiveSection('experience');
-        } else if (positions.projects !== undefined && scrollPosition >= positions.projects - 100) {
-          setActiveSection('projects');
-        } else {
-          setActiveSection(null);
-        }
+        setActiveSection(null);
       }
     };
 
@@ -152,21 +130,6 @@ export default function Home() {
     const menuItems = (
       <>
         <div className="menu-bar space-y-6" style={{ padding: '20px 0' }}>
-          <div className={`menu-item fade-in-element ${activeSection === 'now' ? 'active' : ''}`}
-            onClick={() => scrollToRef(nowRef)}>
-            <span className="line"></span>
-            <a className="menu-link cursor-pointer">Now</a>
-          </div>
-          <div className={`menu-item fade-in-element ${activeSection === 'experience' ? 'active' : ''}`}
-            onClick={() => scrollToRef(experienceRef)}>
-            <span className="line"></span>
-            <a className="menu-link cursor-pointer">Experience</a>
-          </div>
-          <div className={`menu-item fade-in-element ${activeSection === 'projects' ? 'active' : ''}`}
-            onClick={() => scrollToRef(projectsRef)}>
-            <span className="line"></span>
-            <a className="menu-link cursor-pointer">Projects</a>
-          </div>
         </div>
       </>
     );
@@ -321,69 +284,6 @@ export default function Home() {
               </a>
             </div>
           </div>
-        </div>
-
-        <div className="now-container">
-          <h2 ref={nowRef}
-            className="text-xl font-bold mb-2 sticky top-0 z-20 mb-4 mt-4 bg-background/0 py-5 backdrop-blur md:sticky md:top-0 lg:relative lg:top-auto lg:w-full lg:py-0 fade-in-element"
-            id="now">Now</h2>
-          <p className="pl-6 mr-6 text mb-2 fade-in-element" >
-            {"\n Building\n"
-              .split('\n')
-              .map((line, index) => (
-                <span key={index}>
-                  {line}
-                  <br />
-                </span>
-              ))}
-          </p>
-        </div>
-
-        <div className="project-cards-container">
-          <h2 ref={experienceRef}
-            className=" text-xl font-bold mb-2 sticky top-0 z-20 mb-4 mt-4 bg-background/0 py-5 backdrop-blur md:sticky md:top-0 lg:relative lg:top-auto lg:w-full lg:py-0 fade-in-element"
-            id="experiences">Experience</h2>
-
-          {experiences.map((experience) => (
-            <ProjectCard
-              key={experience.name}
-              project={experience}
-              onEnter={setHoveredProject}
-              onLeave={() => setHoveredProject(null)}
-              isHovered={hoveredProject === experience.name}
-              anyCardHovered={anyCardHovered}
-            />
-          ))}
-        </div>
-
-        <div className="project-cards-container ">
-          <h2 ref={projectsRef}
-            className="text-xl font-bold mb-2 sticky top-0 z-20 mb-4 mt-4 bg-background/0 py-5 backdrop-blur md:sticky md:top-0 lg:relative lg:top-auto lg:w-full lg:py-0 fade-in-element"
-            id="projects">Projects</h2>
-
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.name}
-              project={project}
-              onEnter={setHoveredProject}
-              onLeave={() => setHoveredProject(null)}
-              isHovered={hoveredProject === project.name}
-              anyCardHovered={anyCardHovered}
-            />
-          ))}
-        </div>
-
-        <div className="flex items-center ml-3 fade-in-element">
-          <h2 className="text-xs mt-20">
-            {
-              "\n\n\n\n\n".split('\n').map((line, index) => (
-                <span key={index} className="block lg:hidden" style={{ userSelect: 'none' }}>
-                  {line}
-                  <br />
-                </span>
-              ))
-            }
-          </h2>
         </div>
       </div>
     </div>
