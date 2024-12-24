@@ -8,10 +8,9 @@ import Link from "next/link";
 import useTypewriter from 'react-typewriter-hook';
 
 const magicWords = [
-  "platforms that connect people.",
-  "with LMs.",
-  "projects for social impact.",
-  "legos. :)",
+  "something neat.",
+  "agents.",
+  "lego set 10281 :)",
 ];
 
 type ProjectType = {
@@ -226,63 +225,53 @@ export default function Home() {
 
   return (
     <div className="flex h-[calc(100dvh)] overflow-auto custom-bg-gradient">
-      <div className="menu-container">
-        {renderMenu()}
-      </div>
-
-      <div
-        ref={contentContainerRef}
-        className="flex flex-col ml-auto content-width pt-10 lg:overflow-y-auto content-padding custom-scrollbar"
-      >
-        <div className="personal-info md:hidden">
-          <h1 className="font-bold text-4xl mb-2 fade-in-element">Aarush Kukreja</h1>
-          <h2 className="text-xl mb-5 fade-in-element">
-            Undergrad @ <span className="font-bold text-teal-500">Princeton</span>
-          </h2>
-          <p className=" text-xs mb-6 fade-in-element">
-            Building {typewriting}
-            <span className={`blinking-cursor ${isTypingDone ? 'fading' : ''}`}>|</span>
-          </p>
-
-          <div className="social-links  space-x-4 mt-9 mb-9 ">
-            <div className="social-link-wrapper fade-in-element">
-              <Link legacyBehavior href="https://github.com/aarush-kukreja" passHref>
-                <a className="social-icon" aria-label="GitHub">
-                  <FiGithub />
-                  <span className="icon-line"></span>
-                </a>
-              </Link>
-            </div>
-            <div className="social-link-wrapper fade-in-element">
-              <Link legacyBehavior href="https://x.com/aarush_kukreja" passHref>
-                <a className="social-icon" aria-label="X">
-                  <FaXTwitter />
-                  <span className="icon-line"></span>
-                </a>
-              </Link>
-            </div>
-            <div className="social-link-wrapper fade-in-element">
-              <Link legacyBehavior href="https://linkedin.com/in/aarush-kukreja" passHref>
-                <a className="social-icon" aria-label="Linkedin">
-                  <FiLinkedin />
-                  <span className="icon-line"></span>
-                </a>
-              </Link>
-            </div>
-            <div className="social-link-wrapper fade-in-element">
-              <Link legacyBehavior href="https://instagram.com/aarushkukreja" passHref>
-                <a className="social-icon" aria-label="Instagram">
-                  <FiInstagram />
-                  <span className="icon-line"></span>
-                </a>
-              </Link>
-            </div>
-            <div className="social-link-wrapper fade-in-element">
-              <a href="mailto:aarush.kukreja@princeton.edu" className="social-icon" aria-label="Email">
-                <FiMail />
+      <div className="p-10">
+        <h1 className="text-4xl font-bold mb-2 fade-in-element">Aarush Kukreja</h1>
+        <h2 className="text-xl mb-5 fade-in-element">
+          Undergrad @ <span className="font-bold text-teal-500">Princeton</span>
+        </h2>
+        <p className="mb-6 fade-in-element">
+          Building {typewriting}
+          <span className={`blinking-cursor ${isTypingDone ? 'fading' : ''}`}>|</span>
+        </p>
+        <div className="social-links flex space-x-4 mt-8">
+          <div className="social-link-wrapper fade-in-element">
+            <Link legacyBehavior href="https://github.com/aarush-kukreja" passHref>
+              <a className="social-icon" aria-label="GitHub">
+                <FiGithub />
                 <span className="icon-line"></span>
               </a>
-            </div>
+            </Link>
+          </div>
+          <div className="social-link-wrapper fade-in-element">
+            <Link legacyBehavior href="https://x.com/aarush_kukreja" passHref>
+              <a className="social-icon" aria-label="X">
+                <FaXTwitter />
+                <span className="icon-line"></span>
+              </a>
+            </Link>
+          </div>
+          <div className="social-link-wrapper fade-in-element">
+            <Link legacyBehavior href="https://linkedin.com/in/aarush-kukreja" passHref>
+              <a className="social-icon" aria-label="Linkedin">
+                <FiLinkedin />
+                <span className="icon-line"></span>
+              </a>
+            </Link>
+          </div>
+          <div className="social-link-wrapper fade-in-element">
+            <Link legacyBehavior href="https://instagram.com/aarushkukreja" passHref>
+              <a className="social-icon" aria-label="Instagram">
+                <FiInstagram />
+                <span className="icon-line"></span>
+              </a>
+            </Link>
+          </div>
+          <div className="social-link-wrapper fade-in-element">
+            <a href="mailto:aarush.kukreja@princeton.edu" className="social-icon" aria-label="Email">
+              <FiMail />
+              <span className="icon-line"></span>
+            </a>
           </div>
         </div>
       </div>
