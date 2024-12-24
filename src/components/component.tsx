@@ -27,80 +27,11 @@ type ProjectType = {
 };
 
 const experiences: ProjectType[] = [
-  {
-    name: 'Software Engineer · Duckie (YC W24)',
-    description: 'First full-time engineer for Duckie, an AI agent for customer support teams. Built generative AI solutions using OpenAI, Anthropic, and Bedrock APIs, improved RAG accuracy by 248%, slashed token usage by 50%, and shipped 20 full-stack features.',
-    tags: ['OpenAI', 'Anthropic', 'AWS Bedrock', 'RAG', 'Full Stack'],
-    link: 'https://duckie.ai',
-    date: 'May 2024 — Aug 2024'
-  },
-  {
-    name: 'AI Research Intern · Princeton NLP',
-    description: 'Contributing to SWE-agent, an open-source Software Engineer agent, by building improved semantic search functionality for faster autonomous coding. Collaborating directly with OpenAI on SWE Bench Verified.',
-    tags: ['Python', 'NLP', 'Machine Learning', 'LLMs'],
-    link: 'https://nlp.cs.princeton.edu/',
-    date: 'Jun 2024 — Aug 2024'
-  },
-  {
-    name: 'Student Researcher · NASA',
-    description: 'Summer Enhancement in Earth Sciences (SEES) Program. Researched impact of solar arrays on agrivoltaic farming performance.',
-    tags: ['Python', 'Data Analysis', 'Research'],
-    link: 'https://www.nasa.gov/',
-    date: 'Jun 2023 — Aug 2023'
-  },
-  {
-    name: 'Researcher · Caltech SSPP',
-    description: 'Co-authored 3 papers on feasibility of using space solar power systems (SSPS) to supply and balance electrical grids across different U.S. climate regions. Presented at NASA, IEEE, and the European Space Agency.',
-    tags: ['MATLAB', 'Python', 'SQL', 'Java'],
-    link: 'https://www.spacesolar.caltech.edu/',
-    links: [
-      { url: 'https://www.techrxiv.org/articles/preprint/Investigating_the_Optimal_Use_Case_For_Space_Solar_Power_Systems/23935317', text: 'Preprint · IEEE · Aug 15, 2023' },
-      { url: 'https://ieeexplore.ieee.org/document/9926937', text: 'Publication · IEEE · Oct 14, 2022' }
-    ],
-    date: 'Mar 2021 — Jul 2022'
-  },
-  {
-    name: 'Research Assistant · Georgia Tech CCL',
-    description: 'Created a rocket thrust optimization model and published 4 first-author papers. Accepted to a global flagship aerospace conference and attended in Rome.',
-    tags: ['Python', 'Tensorflow', 'Machine Learning'],
-    link: 'https://ccl.gatech.edu',
-    date: 'Nov 2022 — Mar 2023'
-  },
   // Keep other existing experiences as needed
 ];
 
 const projects: ProjectType[] = [
-  {
-    name: 'TurbulentBoids',
-    description: 'Open-source software with 1M+ views. Recognized by PhDs, NASA scientists, Oxford biophysicists, and "Boids" algorithm creator Craig Reynolds.',
-    tags: ['Python', 'Tensorflow', 'Scikit-Learn'],
-    link: 'http://www.turbulent-boids.com/',
-    imageUrl: 'https://repository-images.githubusercontent.com/548613832/88847080-2663-4f81-82f7-4a507aa3adba',
-    links: [
-      { url: 'https://github.com/aarush-kukreja/TurbulentBoids', text: 'GitHub' },
-    ],
-  },
-  {
-    name: 'Shot-Selector',
-    description: 'Software tool that determines the most optimal prompting method, from zero-shot to three-shot, for a given task using advanced ML techniques.',
-    tags: ['Python', 'Machine Learning', 'NLP'],
-    imageUrl: 'https://placehold.co/600x400/1a1a1a/white?text=Shot-Selector',
-    link: 'https://github.com/aarush-kukreja/shot-selector'
-  },
-  {
-    name: 'Tooly',
-    description: 'Tool generator for LLMs and AI agents to create customized toolsets, enhancing their capabilities and task performance.',
-    tags: ['Python', 'LangChain', 'OpenAI'],
-    imageUrl: 'https://placehold.co/600x400/1a1a1a/white?text=Tooly',
-    link: 'https://github.com/aarush-kukreja/tooly'
-  },
-  {
-    name: 'Markify',
-    description: 'Lightweight project that converts unstructured data to structured markdown format, optimizing content for LLM prompting.',
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    imageUrl: 'https://placehold.co/600x400/1a1a1a/white?text=Markify',
-    link: 'https://markify-navy.vercel.app/'
-  },
+  
 ];
 
 
@@ -457,7 +388,7 @@ export function Component() {
             className="text-xl font-bold mb-2 sticky top-0 z-20 mb-4 mt-4 bg-background/0 py-5 backdrop-blur md:sticky md:top-0 lg:relative lg:top-auto lg:w-full lg:py-0 fade-in-element"
             id="now">Now</h2>
           <p className="pl-6 mr-6 text mb-2 fade-in-element" >
-            {"\n Building with AI in climate tech.\n"
+            {"\n Building\n"
               .split('\n')
               .map((line, index) => (
                 <span key={index}>
@@ -505,7 +436,6 @@ export function Component() {
 
         <div className="flex items-center ml-3 fade-in-element">
           <h2 className="text-xs mt-20">
-            Built with <a href="https://nextjs.org/" className="faded-hover-link">Next.js</a> and <a href="https://tailwindcss.com/" className="faded-hover-link">Tailwind CSS</a>, deployed with <a href="https://vercel.com/" className="faded-hover-link">Vercel</a>, and coded in <a href="https://code.visualstudio.com/" className="faded-hover-link cursor-pointer">Visual Studio Code</a>. All work by Aarush Kukreja.
             {
               "\n\n\n\n\n".split('\n').map((line, index) => (
                 <span key={index} className="block lg:hidden" style={{ userSelect: 'none' }}>
