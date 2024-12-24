@@ -396,19 +396,17 @@ body {
 .icon-line {
   position: absolute;
   bottom: -20px;
-  /* Adjust this so the line starts at the icon's bottom edge */
   left: 50%;
   border-radius: 2px;
   transform: translateX(-50%);
-  /* Center the line horizontally */
-  width: 3px;
+  width: 2px;
   height: 0px;
-  /* Initial height of the line */
-  background-color: gray;
-  /* Initial color of the line */
+  background-color: #5eead4;
+  box-shadow: 0 0 10px #5eead4,
+             0 0 20px #5eead4,
+             0 0 30px #5eead4;
   transition: height 0.3s ease;
   z-index: 0;
-  /* Lower z-index to appear behind the icon */
 }
 
 .social-link-wrapper:hover .social-icon {
@@ -421,9 +419,7 @@ body {
 
 .social-link-wrapper:hover .icon-line {
   height: 10px;
-  /* Expanded line height on hover */
-  background-color: teal;
-  /* Line color changes on hover */
+  background-color: #5eead4;
 }
 
 
@@ -792,4 +788,11 @@ body {
 .fade-in-element:nth-child(18) { animation-delay: 1.9s; }
 .fade-in-element:nth-child(19) { animation-delay: 2.0s; }
 .fade-in-element:nth-child(20) { animation-delay: 2.1s; }
+
+.teal-glow {
+  text-shadow: 0 0 10px #5eead4,
+               0 0 20px #5eead4,
+               0 0 30px #5eead4;
+  color: #5eead4;
+}
 

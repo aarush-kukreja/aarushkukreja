@@ -125,69 +125,6 @@ export default function Home() {
     };
   }, []);
 
-  const renderMenu = () => {
-    const menuItems = (
-      <>
-        <div className="menu-bar space-y-6" style={{ padding: '20px 0' }}>
-        </div>
-      </>
-    );
-
-    return (
-      <div className="sidebar fixed top-0 left-0 h-full p-10 w-1/3 space-y-4 z-10 backdrop-filter-blur-lg bg-opacity-50 bg-black ">
-        <h1 className="text-4xl font-bold mb-2 fade-in-element">Aarush Kukreja</h1>
-        <h2 className="text-xl mb-5 fade-in-element">
-          Undergrad @ <span className="font-bold text-teal-500">Princeton</span>
-        </h2>
-        <p className=" mb-6 fade-in-element">
-          Building {typewriting}
-          <span className={`blinking-cursor ${isTypingDone ? 'fading' : ''}`}>|</span>
-        </p>
-        {menuItems}
-        <div className="social-links flex space-x-4 mt-8">
-          <div className="social-link-wrapper fade-in-element">
-            <Link legacyBehavior href="https://github.com/aarush-kukreja" passHref>
-              <a className="social-icon" aria-label="GitHub">
-                <FiGithub />
-                <span className="icon-line"></span>
-              </a>
-            </Link>
-          </div>
-          <div className="social-link-wrapper fade-in-element">
-            <Link legacyBehavior href="https://x.com/aarush_kukreja" passHref>
-              <a className="social-icon" aria-label="X">
-                <FaXTwitter />
-                <span className="icon-line"></span>
-              </a>
-            </Link>
-          </div>
-          <div className="social-link-wrapper fade-in-element">
-            <Link legacyBehavior href="https://linkedin.com/in/aarush-kukreja" passHref>
-              <a className="social-icon" aria-label="Linkedin">
-                <FiLinkedin />
-                <span className="icon-line"></span>
-              </a>
-            </Link>
-          </div>
-          <div className="social-link-wrapper fade-in-element">
-            <Link legacyBehavior href="https://instagram.com/aarushkukreja" passHref>
-              <a className="social-icon" aria-label="Instagram">
-                <FiInstagram />
-                <span className="icon-line"></span>
-              </a>
-            </Link>
-          </div>
-          <div className="social-link-wrapper fade-in-element">
-            <a href="mailto:aarush.kukreja@princeton.edu" className="social-icon" aria-label="Email">
-              <FiMail />
-              <span className="icon-line"></span>
-            </a>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       document.documentElement.style.setProperty('--cursorX', `${event.clientX}px`);
@@ -224,21 +161,21 @@ export default function Home() {
   }, [typewriting, magicWord, magicWords.length]);
 
   return (
-    <div className="flex h-[calc(100dvh)] overflow-auto custom-bg-gradient">
-      <div className="p-10">
+    <div className="flex h-[calc(100dvh)] overflow-auto custom-bg-gradient items-center justify-center">
+      <div className="text-center">
         <h1 className="text-4xl font-bold mb-2 fade-in-element">Aarush Kukreja</h1>
         <h2 className="text-xl mb-5 fade-in-element">
-          Undergrad @ <span className="font-bold text-teal-500">Princeton</span>
+          CS @ <span className="font-bold">Princeton</span>
         </h2>
         <p className="mb-6 fade-in-element">
           Building {typewriting}
-          <span className={`blinking-cursor ${isTypingDone ? 'fading' : ''}`}>|</span>
+          <span className={`blinking-cursor teal-glow ${isTypingDone ? 'fading' : ''}`}>|</span>
         </p>
-        <div className="social-links flex space-x-4 mt-8">
+        <div className="social-links flex space-x-4 mt-8 justify-center">
           <div className="social-link-wrapper fade-in-element">
             <Link legacyBehavior href="https://github.com/aarush-kukreja" passHref>
               <a className="social-icon" aria-label="GitHub">
-                <FiGithub />
+                <FiGithub size={20} />
                 <span className="icon-line"></span>
               </a>
             </Link>
@@ -246,7 +183,7 @@ export default function Home() {
           <div className="social-link-wrapper fade-in-element">
             <Link legacyBehavior href="https://x.com/aarush_kukreja" passHref>
               <a className="social-icon" aria-label="X">
-                <FaXTwitter />
+                <FaXTwitter size={20} />
                 <span className="icon-line"></span>
               </a>
             </Link>
@@ -254,7 +191,7 @@ export default function Home() {
           <div className="social-link-wrapper fade-in-element">
             <Link legacyBehavior href="https://linkedin.com/in/aarush-kukreja" passHref>
               <a className="social-icon" aria-label="Linkedin">
-                <FiLinkedin />
+                <FiLinkedin size={20} />
                 <span className="icon-line"></span>
               </a>
             </Link>
@@ -262,14 +199,14 @@ export default function Home() {
           <div className="social-link-wrapper fade-in-element">
             <Link legacyBehavior href="https://instagram.com/aarushkukreja" passHref>
               <a className="social-icon" aria-label="Instagram">
-                <FiInstagram />
+                <FiInstagram size={20} />
                 <span className="icon-line"></span>
               </a>
             </Link>
           </div>
           <div className="social-link-wrapper fade-in-element">
             <a href="mailto:aarush.kukreja@princeton.edu" className="social-icon" aria-label="Email">
-              <FiMail />
+              <FiMail size={20} />
               <span className="icon-line"></span>
             </a>
           </div>
