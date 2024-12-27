@@ -11,7 +11,7 @@ import useTypewriter from 'react-typewriter-hook';
 const magicWords = [
   "something neat.",
   "with CoT reasoning.",
-  "lego set 10281 from the loml <3 ",
+  "lego set 10281 from the loml <3",
   "a bot that merges PRs by rolling dice.",
 ];
 
