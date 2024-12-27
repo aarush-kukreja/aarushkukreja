@@ -7,10 +7,12 @@ import { TbArrowUpRight } from "react-icons/tb";
 import Link from "next/link";
 import useTypewriter from 'react-typewriter-hook';
 
+// building...
 const magicWords = [
   "something neat.",
   "with CoT reasoning.",
   "lego set 10281 <3",
+  "a bot that merges PRs by rolling dice.",
 ];
 
 type ProjectType = {
