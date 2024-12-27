@@ -9,8 +9,8 @@ import useTypewriter from 'react-typewriter-hook';
 
 const magicWords = [
   "something neat.",
-  "agents.",
-  "lego set 10281 :)",
+  "with CoT reasoning.",
+  "lego set 10281 <3",
 ];
 
 type ProjectType = {
