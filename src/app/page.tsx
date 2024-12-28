@@ -165,7 +165,7 @@ export default function Home() {
   return (
     <div className="flex h-[calc(100dvh)] overflow-auto custom-bg-gradient items-center justify-center">
       <div className="text-center flex flex-col items-center w-[300px]">
-        <div className="mb-8 w-full">
+        <div className="mb-4 w-full">
           <h1 className="text-2xl font-bold mb-2 fade-in-element">Aarush Kukreja</h1>
           <h2 className="text-sm mb-3 fade-in-element">
             CS @ Princeton
