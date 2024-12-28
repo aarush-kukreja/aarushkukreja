@@ -11,7 +11,7 @@ import useTypewriter from 'react-typewriter-hook';
 const magicWords = [
   "something neat.",
   "with CoT reasoning.",
-  "lego set 10281 from the loml <3 ",
+  "lego set 10281 from the loml <3.",
   "a bot that rolls dice to merge PRs.",
 ];
 
@@ -164,20 +164,24 @@ export default function Home() {
 
   return (
     <div className="flex h-[calc(100dvh)] overflow-auto custom-bg-gradient items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-2 fade-in-element">Aarush Kukreja</h1>
-        <h2 className="text-xl mb-5 fade-in-element">
-          CS @ <span className="font-bold">Princeton</span>
-        </h2>
-        <p className="mb-6 fade-in-element text-xs">
-          Building {typewriting}
-          <span className={`blinking-cursor teal-glow ${isTypingDone ? 'fading' : ''}`}>|</span>
-        </p>
-        <div className="social-links flex space-x-4 mt-8 justify-center">
+      <div className="text-center flex flex-col items-center w-[300px]">
+        <div className="mb-8 w-full">
+          <h1 className="text-2xl font-bold mb-2 fade-in-element">Aarush Kukreja</h1>
+          <h2 className="text-sm mb-3 fade-in-element">
+            CS @ Princeton
+          </h2>
+          <div className="min-h-[1.5rem]">
+            <p className="fade-in-element text-xs">
+              Building {typewriting}
+              <span className={`blinking-cursor teal-glow ${isTypingDone ? 'fading' : ''}`}>|</span>
+            </p>
+          </div>
+        </div>
+        <div className="social-links flex space-x-1 justify-center w-full">
           <div className="social-link-wrapper fade-in-element">
             <Link legacyBehavior href="https://github.com/aarush-kukreja" passHref>
               <a className="social-icon" aria-label="GitHub">
-                <FiGithub size={20} />
+                <FiGithub size={16} />
                 <span className="icon-line"></span>
               </a>
             </Link>
@@ -185,7 +189,7 @@ export default function Home() {
           <div className="social-link-wrapper fade-in-element">
             <Link legacyBehavior href="https://x.com/4aru5h" passHref>
               <a className="social-icon" aria-label="X">
-                <FaXTwitter size={20} />
+                <FaXTwitter size={16} />
                 <span className="icon-line"></span>
               </a>
             </Link>
@@ -193,7 +197,7 @@ export default function Home() {
           <div className="social-link-wrapper fade-in-element">
             <Link legacyBehavior href="https://linkedin.com/in/aarush-kukreja" passHref>
               <a className="social-icon" aria-label="Linkedin">
-                <FiLinkedin size={20} />
+                <FiLinkedin size={16} />
                 <span className="icon-line"></span>
               </a>
             </Link>
@@ -201,14 +205,14 @@ export default function Home() {
           <div className="social-link-wrapper fade-in-element">
             <Link legacyBehavior href="https://instagram.com/aarushkukreja" passHref>
               <a className="social-icon" aria-label="Instagram">
-                <FiInstagram size={20} />
+                <FiInstagram size={16} />
                 <span className="icon-line"></span>
               </a>
             </Link>
           </div>
           <div className="social-link-wrapper fade-in-element">
             <a href="mailto:aarush.kukreja@princeton.edu" className="social-icon" aria-label="Email">
-              <FiMail size={20} />
+              <FiMail size={16} />
               <span className="icon-line"></span>
             </a>
           </div>
