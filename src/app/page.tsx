@@ -11,8 +11,8 @@ import useTypewriter from 'react-typewriter-hook';
 const magicWords = [
   "something neat.",
   "with CoT reasoning.",
-  "lego set 10281 from the loml <3",
-  "a bot that merges PRs by rolling dice.",
+  "lego set 10281 from the loml <3 ",
+  "a bot that rolls dice to merge PRs.",
 ];
 
 type ProjectType = {
@@ -169,7 +169,7 @@ export default function Home() {
         <h2 className="text-xl mb-5 fade-in-element">
           CS @ <span className="font-bold">Princeton</span>
         </h2>
-        <p className="mb-6 fade-in-element">
+        <p className="mb-6 fade-in-element text-xs">
           Building {typewriting}
           <span className={`blinking-cursor teal-glow ${isTypingDone ? 'fading' : ''}`}>|</span>
         </p>
