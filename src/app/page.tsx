@@ -9,7 +9,7 @@ import useTypewriter from 'react-typewriter-hook';
 
 // building...
 const magicWords = [
-  "something neat.",
+  "Tropir (YC W25).",
   "with CoT reasoning.",
   "lego set 10281 from the loml <3.",
   "a bot that rolls dice to merge PRs.",
@@ -168,7 +168,7 @@ export default function Home() {
         <div className="mb-4 w-full">
           <h1 className="text-2xl font-bold mb-2 fade-in-element">Aarush Kukreja</h1>
           <h2 className="text-sm mb-3 fade-in-element">
-            CS @ Princeton
+            CS @ Princeton (On Leave)
           </h2>
           <div className="min-h-[1.5rem]">
             <p className="fade-in-element text-xs">
