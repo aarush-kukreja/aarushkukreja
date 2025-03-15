@@ -11,7 +11,6 @@ import useTypewriter from 'react-typewriter-hook';
 const magicWords = [
   "Tropir (YC W25).",
   "with CoT reasoning.",
-  "lego set 10281 from the loml <3.",
   "a bot that rolls dice to merge PRs.",
 ];
 
